@@ -1,0 +1,43 @@
+<h1 style="text-align: center;">
+    Bienvenido a {{title}}
+    <br>
+    <p>Nombre: {{nombre}}</p>
+    <p>Edad: {{edad}}</p>
+    <p>Email: {{email}}</p>
+    <p>Sueldos: {{sueldos[0]}}, {{sueldos[1]}}, {{sueldos[2]}}</p>
+    <p>La suma de los sueldos es: {{sumarSueldos()}}</p>
+    <p>{{tieneTrabajo()}}</p>
+    <p *ngIf="edad>=18">Es mayor de edad</p>
+    <p>El promedio obtenido es: {{calcularPromedio()}}</p>
+    <table border="1">
+        <td>
+            <tr>
+                <td>Notas</td>
+            </tr>
+            <tr *ngFor="let nota of notas">
+                <td>{{nota}}</td>
+            </tr>
+            
+         </td>
+         <td>
+            <tr>
+                <td>Sueldos</td>
+            </tr>
+            <tr *ngFor="let sueldo of sueldos">
+                <td>{{sueldo}}</td>
+            </tr>
+            
+         </td>
+         <td>
+            <tr>
+                <td>Actividades</td>
+            </tr>
+            <tr *ngFor="let actividad of actividades">
+                <td>{{actividad}}</td>
+            </tr>
+            
+         </td>
+
+      
+    </table>
+  </h1>

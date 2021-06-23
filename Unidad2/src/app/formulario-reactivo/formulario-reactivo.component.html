@@ -1,0 +1,21 @@
+<form [formGroup] ="formularioContacto" (ngSubmit)="enviar()">
+    <p>Nombre:
+        <input type="text" formControlName="nombre">
+    </p>
+    <p>rut:
+        <input type="text" formControlName="rut">
+    </p>
+    <p>mensaje:
+        <textarea cols="50" rows="12" formControlName="mensaje">
+
+        </textarea>
+
+    </p>
+
+    <button type="submit">Enviar</button>
+
+
+</form>
+
+
+<div>{{datos}}</div>
