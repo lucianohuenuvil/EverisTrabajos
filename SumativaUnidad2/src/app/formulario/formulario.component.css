@@ -1,0 +1,27 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+
+.button-container{
+    margin: 30px;
+}
+
+
+.container{
+    padding: 40px;
+
+}
+
+.bordes{
+    border: solid 1px rgb(189, 189, 189);
+    padding: 10px;
+}
+
+.mensaje{
+    min-height: 40px;
+    color: red;
+}
+
