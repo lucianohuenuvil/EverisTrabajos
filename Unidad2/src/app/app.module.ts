@@ -11,6 +11,7 @@ import { AzarComponent } from './azar/azar.component';
 import { OpcionesComponent } from './opciones/opciones.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
+import { FormularioNotasComponent } from './formulario-notas/formulario-notas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormularioReactivoComponent } from './formulario-reactivo/formulario-re
     ListasComponent,
     AzarComponent,
     OpcionesComponent,
-    FormularioReactivoComponent
+    FormularioReactivoComponent,
+    FormularioNotasComponent
   ],
   imports: [
     BrowserModule,

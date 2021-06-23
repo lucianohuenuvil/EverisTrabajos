@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="contenedor">
+
+
+    <form class="container" [formGroup]="formulario" (ngSubmit)="enviar()" #quizForm='ngForm' autocomplete="off">
+
+        <h2 style="text-align: center;">Formulario Ingreso de notas</h2>
+        <div class="form-group">
+            <label>Rut:</label>
+            <input class="form-control" type="number" formControlName="rut" required>
+        </div>
+
+        <div class="form-group">
+            <label>Ingrese el nombre:</label>
+            <input class="form-control" type="text" formControlName="nombre" required>
+        </div>
+        <div formGroupName="notas">
+            <div class="form-group">
+                <label>Ingrese la nota 1:</label>
+                <input class="form-control" type="number" formControlName="nota1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Ingrese la nota 2:</label>
+                <input class="form-control" type="number" formControlName="nota2" required>
+            </div>
+
+            <div class="form-group">
+                <label>Ingrese la nota 3:</label>
+                <input class="form-control" type="number" formControlName="nota3" required>
+            </div>
+
+            <div class="form-group">
+                <label>Ingrese la nota 4:</label>
+                <input class="form-control" type="number" formControlName="nota4" required>
+            </div>
+
+            
+            <div class="form-group">
+                <label>Ingrese la nota del examen:</label>
+                
+                <input required class="form-control" type="number" formControlName="examen" >
+            </div>
+        </div>
+        <p>
+            <input type="submit" [disabled] = '!quizForm.form.valid' >
+        </p>
+
+        <div class="resultado">
+            <p>Resultado: <strong>{{salida}}</strong></p>
+        </div>
+
+        <div class="resultado">
+            <p>Promedio final: <strong>{{mensaje}}</strong></p>
+        </div>
+        <div class="resultado">
+            <p>Las notas del alumno fueron: <strong>{{notas}}</strong> </p>
+        </div>
+
+        <div class="resultado">
+            <p>Estado final del alumno: <strong>{{aprobado}}</strong></p>
+        </div>
+        
+    </form>
+</div>
