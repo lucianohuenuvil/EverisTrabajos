@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<hr>
+<div class="container">
+    <br>
+    <h2>Operaciones CRUD sobre los productos</h2>
+    <br>
+    <div  class="table-responsive">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Sumar</th>
+                <th scope="col">Restar</th>
+                <th scope="col">Venta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of productos">
+                <th scope="row">{{ prod.codigo }}</th>
+                <td>{{ prod.nombre }}</td>
+                <td>{{ prod.precio }}</td>
+                <td>{{ prod.cantidad }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="aumentoCantidad(prod)">Aumentar</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="disminucionCantidad(prod)">Disminuir</button>
+                </td>
+
+                <td>
+                    <button class="btn btn-info" (click)="comprar(prod.codigo)">Comprar</button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <br>
+    <hr>
+    <br>
+
+<div class="container ">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Precio Iva</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let list of array">
+                <th scope="row">{{ list.codigo }}</th>
+                <td>{{ list.nombre | uppercase}}</td>
+                <td>{{ list.total | currency:'$'}}</td>
+                <td>{{ list.totalIva | currency:'$'}}</td>
+                <td>{{ list.cantidad }}</td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Total a pagar: {{totalPrecio | currency:'$'}}</h2>
+</div>

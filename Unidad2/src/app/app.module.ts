@@ -12,6 +12,10 @@ import { OpcionesComponent } from './opciones/opciones.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
 import { FormularioNotasComponent } from './formulario-notas/formulario-notas.component';
+import { DirectivasComponent } from './directivas/directivas.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { EstilosComponent } from './estilos/estilos.component';
+import { CrudComponent } from './formativa3.1/crud.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { FormularioNotasComponent } from './formulario-notas/formulario-notas.co
     AzarComponent,
     OpcionesComponent,
     FormularioReactivoComponent,
-    FormularioNotasComponent
+    FormularioNotasComponent,
+    DirectivasComponent,
+    PipesComponent,
+    EstilosComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,

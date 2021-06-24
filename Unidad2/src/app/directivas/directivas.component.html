@@ -1,0 +1,11 @@
+<p>directivas works!</p>
+
+
+<table>
+    <tr *ngFor="let valor of lista; let impar=odd; let par=even;"
+        [ngClass]="{verde:par, celeste:impar}">
+        <td>
+            {{valor}}
+        </td>
+    </tr>
+</table>

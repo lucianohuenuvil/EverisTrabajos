@@ -76,7 +76,6 @@ export class FormularioComponent implements OnInit {
                   
     this.existe = false
 
- 
   }
 
   eliminar(code:string){
