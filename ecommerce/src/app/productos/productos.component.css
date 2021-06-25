@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.products{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+
+.products-content{
+    margin: 40px;
+}
+
+
+
+.container-ajustar{
+    margin: 80px;
+ 
+}
+
+.container-ajustar h2{
+    margin: 80px;
+    text-align: center;
+}
+
+.paddd{
+    padding: 20px;
+}
+
+
+.contorno{
+    padding: 25px;
+    border: solid .5px rgb(184, 184, 184);
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.carrito{
+    position: absolute;
+    background-color: aliceblue;
+}

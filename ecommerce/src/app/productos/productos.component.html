@@ -1,0 +1,132 @@
+<!--
+<hr>
+<div class="container">
+    <br>
+
+    <br>
+    <div  class="table-responsive">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Sumar</th>
+                <th scope="col">Restar</th>
+                <th scope="col">Venta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of productos">
+                <th scope="row">{{ prod.codigo }}</th>
+                <td>{{ prod.nombre }}</td>
+                <td>{{ prod.precio }}</td>
+                <td>{{ prod.cantidad }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="aumentoCantidad(prod)">Aumentar</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="disminucionCantidad(prod)">Disminuir</button>
+                </td>
+
+                <td>
+                    <button class="btn btn-info" (click)="comprar(prod.codigo)">Comprar</button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <br>
+    <hr>
+    <br>
+
+-->
+
+
+<div *ngIf="mostrar" [ngClass]="visual"  class="container carrito">
+    <div  class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Precio Iva</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let list of array">
+                <th scope="row">{{ list.codigo }}</th>
+                <td>{{ list.nombre | uppercase}}</td>
+                <td>{{ list.total | currency:'$'}}</td>
+                <td>{{ list.totalIva | currency:'$'}}</td>
+                <td>{{ list.cantidad }}</td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Total a pagar: {{totalPrecio | currency:'$'}}</h2>
+</div>
+
+
+
+
+
+
+<main class="container">
+
+        <br>
+  
+    
+      <div class="centrar">
+        <div class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            <div *ngIf="mostrar">
+                <button class="btn btn-outline-warning my-2 my-sm-1" (click)="mostrar=false"> Cerrar carrito </button>
+            </div>
+            <div *ngIf="mostrar==false">
+                <button class="btn btn-outline-warning my-2 my-sm-1" (click)="mostrar=true"> Ver carrito </button>
+            </div>
+        </div>
+      </div>
+
+
+      <div class="products">
+          
+        <div *ngFor="let prod of productos" class="products-content">
+            <div class="card"  style="width: 18rem;">
+                <img src="{{prod.ruta}}" class="card-img-top paddd" alt="">
+                <div class="card-body">
+                  <h5 style="text-align: center;" class="card-title">{{prod.nombre}}</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Codigo:{{prod.codigo}}</li>
+                    <li class="list-group-item">Precio:{{prod.precio | currency:'$'}}</li>
+                    <li class="list-group-item">Descripción:{{prod.descripcion}}</li>
+                    <li class="list-group-item">Cantidad:{{prod.cantidad}} </li>
+                    <div class="btn-group" role="group" aria-label="Third group">
+                        <button type="button" class="btn btn-secondary" (click)="aumentoCantidad(prod)">Aumentar</button>
+                        <button type="button" class="btn btn-secondary"(click)="disminucionCantidad(prod)" >Disminuir</button>
+                    </div>
+                    <li class="list-group-item card text-center"> <button class="btn btn-success" (click)="comprar(prod.codigo)"> Agregar al carro</button> </li>
+                  </ul>   
+                </div>
+            </div>
+        </div>
+     
+      </div>
+<!--
+        <nav aria-label="Page navigation example products-content">
+          <ul class="pagination centrar">
+            <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="index2.html">2</a></li>
+          </ul>
+        </nav> -->
+
+</main>
