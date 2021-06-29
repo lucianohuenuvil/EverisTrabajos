@@ -184,6 +184,7 @@ export class ProductosComponent implements OnInit {
         }
       }
       this.totalDinero+=this.productosActual[i].precio;
+      this._servicio.settotaldinero(this.totalDinero) 
       localStorage.setItem("total",JSON.stringify(this.totalDinero));
     }
     else{
@@ -191,6 +192,7 @@ export class ProductosComponent implements OnInit {
       this.productosCarrito.push(this.productosActual[i]);
       this.productosCantidad.push({codigo: this.productosActual[i].codigo, cant: 1});
       this.totalDinero+=this.productosActual[i].precio;
+      this._servicio.settotaldinero(this.totalDinero) 
       localStorage.setItem("total",JSON.stringify(this.totalDinero))
     }
     localStorage.setItem("carrito",JSON.stringify(this.productosCarrito));
@@ -202,6 +204,7 @@ export class ProductosComponent implements OnInit {
       if(this.productosCarrito[i].codigo == cod){
         this.totalDinero-=(this.productosCarrito[i].precio*this.productosCantidad[i+1].cant);
         localStorage.setItem("total",JSON.stringify(this.totalDinero))
+        this._servicio.settotaldinero(this.totalDinero) 
         this.productosCarrito.splice(i,1);
         this.productosCantidad.splice(i+1,1);
       }
@@ -216,6 +219,7 @@ export class ProductosComponent implements OnInit {
         this.totalDinero-=(this.productosCarrito[i].precio*this.productosCantidad[i+1].cant);
         this.productosCantidad[i+1].cant = this.cantidad.value;
         this.totalDinero+=(this.productosCarrito[i].precio*this.productosCantidad[i+1].cant);
+        this._servicio.settotaldinero(this.totalDinero) 
         localStorage.setItem("total",JSON.stringify(this.totalDinero))
       }
     }
@@ -256,13 +260,7 @@ export class ProductosComponent implements OnInit {
   cofirmarCarrito(){
     this._servicio.setArray(this.productosCarrito)
     
-    
-    //this._service.setArray(datos);
-    //for(var i=0; i<this.productosCarrito.length; i++){
-    //  this._servicio.productosCarrito.push(this.productosCarrito[i]);
-   // }
 
-   // this._servicio.productosCarrito = this.productosCarrito
   }
 
 }

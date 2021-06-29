@@ -17,7 +17,7 @@
         </div>
 
 
-        <table style="text-align: center;" class="table">
+        <table style="text-align: center;" class="table ">
             <thead>
                 <tr>
                     <th scope="col">Pais</th>
@@ -43,7 +43,7 @@
 </div>
 
 
-
+<hr>
 
 
 <div class="container">
@@ -60,17 +60,22 @@
             <div class="card-body">
               <h5 style="text-align: center;" class="card-title">{{items.nombre}}</h5>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Precio:{{items.precio | currency:'CLP'}}</li>
-                <div class="btn-group" role="group" aria-label="Third group">
-                    <button type="button" class="btn btn-secondary"> Agregar al carrito</button>
-                </div>
+                <li class="list-group-item">Precio unitario:{{items.precio | currency:'CLP'}}</li>
+                <li class="list-group-item"></li>
+
 
               </ul>   
             </div>
         </div>
     </div>
   </div> 
-
+<div class="container">
+  <div class="btn-group" role="group" aria-label="Third group">
+    <p>Precio total : {{ total }}</p>
+    <br>
+    <button type="button" class="btn btn-secondary" (click)="FinalizarCompra()"> Confirmar Compra</button>
+</div>
+</div>
 
 </div>
 

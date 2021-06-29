@@ -10,12 +10,19 @@ export class TotalService {
   datosDireccion: any[] = []; // Array para el direccion
   datosTarjeta: any[] = []; // Array para el usuario
   datosUsuario: any[] = []; // Array para el usuario
+  totaldinero = 0
 
 
   constructor (){
     //for(var i=0; i<this.productosCarrito.length; i++)
      
   }
+
+
+  settotaldinero(array: any) {
+    this.totaldinero = array
+  }
+
 
 
   setArray(array: any) {
@@ -38,7 +45,9 @@ export class TotalService {
 
 
 
-
+  gettotaldinero() {
+    return this.totaldinero
+  }
 
   getArrayTarjeta() {
     return this.datosTarjeta;
@@ -59,6 +68,7 @@ export class TotalService {
 
   imprimir(){
     console.log(this.productosCarrito)
+    console.log(this.totaldinero)
   }
 }
 

@@ -1,1 +1,95 @@
-<p>factura works!</p>
+<script src="https://kit.fontawesome.com/e442689a94.js" crossorigin="anonymous"></script>
+<nav class="nav-container">
+    <div class="logo-nav-container">
+        <a href="/">HOME PAGE</a>
+    </div>
+</nav>
+
+
+<div  class="container">
+
+    <div class="container-ajustar">
+        <h2>Datos de tarjeta</h2>
+    </div>
+
+
+    <table style="text-align: center;" class="table ">
+        <thead>
+            <tr>
+                <th scope="col">Nombre tarjeta</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Código</th>
+                <th scope="col">Codigo de seguridad</th>
+                <th scope="col">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <tr >
+            <td >{{arraytarjeta.value.nombre}}</td>
+            <td >{{arraytarjeta.value.tipo}}</td>
+            <td >{{arraytarjeta.value.codigotarjeta}}</td>
+            <td >{{arraytarjeta.value.codigoseguridad}}</td>
+            <td >{{arraytarjeta.value.fecha}}</td>
+        </tr>
+        
+    </table>
+
+
+</div>
+
+
+
+<div  class="container">
+
+        <div class="container-ajustar">
+            <h2>Datos de compra</h2>
+        </div>
+
+
+        <table style="text-align: center;" class="table ">
+            <thead>
+                <tr>
+                    <th scope="col">Pais</th>
+                    <th scope="col">calle</th>
+                    <th scope="col">ciudad</th>
+                    <th scope="col">region</th>
+                    <th scope="col">Código postal</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr >
+                <td >{{arraydireccion.value.pais}}</td>
+                <td >{{arraydireccion.value.calle}}</td>
+                <td >{{arraydireccion.value.ciudad}}</td>
+                <td >{{arraydireccion.value.region}}</td>
+                <td >{{arraydireccion.value.codigoPostal}}</td>
+            </tr>
+            
+        </table>
+
+
+</div>
+
+
+<hr>
+
+
+<div class="container">
+    <div class="container-ajustar">
+        <h2>Total cancelado</h2>
+    </div>  
+
+ 
+<div class="container">
+  <div class="btn-group" role="group" aria-label="Third group">
+    <p>{{ total }}</p>
+    <br>
+    <button type="button" class="btn btn-secondary"> Confirmar Compra</button>
+</div>
+</div>
+
+</div>
+
+
