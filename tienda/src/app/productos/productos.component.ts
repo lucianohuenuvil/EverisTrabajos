@@ -256,6 +256,7 @@ export class ProductosComponent implements OnInit {
   cofirmarCarrito(){
     this._servicio.setArray(this.productosCarrito)
     
+    
     //this._service.setArray(datos);
     //for(var i=0; i<this.productosCarrito.length; i++){
     //  this._servicio.productosCarrito.push(this.productosCarrito[i]);

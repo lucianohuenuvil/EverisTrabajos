@@ -8,12 +8,28 @@ import { TotalService } from '../total.service';
 })
 export class OrdenComponent implements OnInit {
 
+ 
+
   constructor(private _servicio:TotalService) { }
+
+
+  productosCarrito!: any; // Array para el carrito
+  arraydireccion!: any; // Array para el carrito
+  arraytarjeta!: any; // Array para el carrito
 
   ngOnInit(): void {
 
-    console.log(this._servicio.getArrayTarjeta())
-    console.log(this._servicio.getArrayDireccion())
+    this.productosCarrito = this._servicio.getArray()
+    this.arraydireccion = this._servicio.getArrayDireccion()
+    this.arraytarjeta = this._servicio.getArrayTarjeta()
+    
+
+  }
+
+
+
+  FinalizarCompra(){
+
   }
 
 

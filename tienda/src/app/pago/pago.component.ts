@@ -80,10 +80,8 @@ export class PagoComponent implements OnInit {
   enviarPago(){
 
 
-    
-
     this._servicio.setArrayTarjeta(this.formularioPago)
-
+    this._servicio.setArrayDireccion(this.formularioContacto)
 
 
     this.router.navigate(['/orden'])

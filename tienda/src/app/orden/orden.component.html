@@ -10,6 +10,74 @@
 
 
 
+<div  class="container">
+
+        <div class="container-ajustar">
+            <h2>Datos de compra</h2>
+        </div>
+
+
+        <table style="text-align: center;" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Pais</th>
+                    <th scope="col">calle</th>
+                    <th scope="col">ciudad</th>
+                    <th scope="col">region</th>
+                    <th scope="col">Código postal</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr >
+                <td >{{arraydireccion.value.pais}}</td>
+                <td >{{arraydireccion.value.calle}}</td>
+                <td >{{arraydireccion.value.ciudad}}</td>
+                <td >{{arraydireccion.value.region}}</td>
+                <td >{{arraydireccion.value.codigoPostal}}</td>
+            </tr>
+            
+        </table>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="container-ajustar">
+        <h2>Orden de compra</h2>
+    </div>  
+
+ <div class="container products">      
+    <div *ngFor="let items of productosCarrito" class="products-content">
+        <div class="card"  style="width: 18rem;">
+            <div class="imagen">
+              <img src="{{items.img}}" class="card-img-top paddd imagen" alt="" >
+            </div>
+            <div class="card-body">
+              <h5 style="text-align: center;" class="card-title">{{items.nombre}}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Precio:{{items.precio | currency:'CLP'}}</li>
+                <div class="btn-group" role="group" aria-label="Third group">
+                    <button type="button" class="btn btn-secondary"> Agregar al carrito</button>
+                </div>
+
+              </ul>   
+            </div>
+        </div>
+    </div>
+  </div> 
+
+
+</div>
+
+
+
+
+
 <footer class="footer-contenedor">
     <p class="mb-1">© 2021 Productos Inteligentes</p>
     <ul class="list-inline">

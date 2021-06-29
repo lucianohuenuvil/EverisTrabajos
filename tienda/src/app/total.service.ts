@@ -23,7 +23,7 @@ export class TotalService {
   }
 
   setArrayDireccion(array: any) {
-    this.productosCarrito = array;
+    this.datosDireccion = array;
   }
 
 
@@ -37,6 +37,9 @@ export class TotalService {
   }
 
 
+
+
+
   getArrayTarjeta() {
     return this.datosTarjeta;
   }
@@ -47,11 +50,11 @@ export class TotalService {
   }
 
   getArrayDireccion() {
-    return this.productosCarrito;
+    return this.datosDireccion;
   }
 
   getArrayUsuario() {
-    return this.productosCarrito;
+    return this.datosUsuario;
   }
 
   imprimir(){
