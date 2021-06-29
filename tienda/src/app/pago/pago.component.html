@@ -1,1 +1,106 @@
-<p>pago works!</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/e442689a94.js" crossorigin="anonymous"></script>
+<nav class="nav-container">
+    <div class="logo-nav-container">
+        <a href="/">HOME PAGE</a>
+    </div>
+</nav>
+<nav>
+
+</nav>
+
+
+<div class="container">
+      <form [formGroup] ="formularioContacto" (ngSubmit)="enviar()" class="products-content">
+            <div class="form-group">
+                <h1 style="text-align: center;">Datos de envío:</h1>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">País</label>
+            <input type="text" class="form-control"formControlName="pais" placeholder="Ingrese el pais donde reside" required>
+            
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Calle</label>
+                <input type="text" class="form-control" formControlName="calle" placeholder="Ingrese la calle" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ciudad</label>
+                <input type="text" class="form-control" formControlName="ciudad" placeholder="Ingrese la ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Región</label>
+                <select class="form-control shadow" formControlName="region">
+                    <option value="arica">Arica y Parinacota</option>
+                    <option value="tarapaca">Tarapacá</option>
+                    <option value="antofagasta">Antofagasta</option>
+                    <option value="atacama">Atacama</option>
+                    <option value="coquimbo">Coquimbo</option>
+                    <option value="valparaíso">Valparaíso</option>
+                    <option value="rm">Metropolitana de Santiago</option>
+                    <option value="libertador">Libertador General Bernardo O’Higgins</option>
+                    <option value="maule">Maule</option>
+                    <option value="ñuble">Ñuble</option>
+                    <option value="biobio">Biobío</option>
+                    <option value="araucania">La Araucanía</option>
+                    <option value="rios">Los Ríos</option>
+                    <option value="lagos">Los Lagos</option>
+                    <option value="aysen">Aysén del General Carlos Ibáñez del Campo</option>
+                    <option value="magallanes">Magallanes y la Antártica Chilena</option>
+                </select>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Codigo Postal</label>
+            <input type="number" class="form-control" formControlName="codigoPostal" placeholder="Codigo postal" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+</div>
+
+
+
+<div class="contenedor-tarjeta">
+    <div class="container">
+        <form [formGroup] ="formularioPago" (ngSubmit)="enviarPago()" class="products-content">
+            <div class="form-group">
+                <h1 style="text-align: center;">Datos de tarjeta:</h1>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control"formControlName="nombre" placeholder="Ingrese el nombre que figura en su tarjeta" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tipo de tarjeta</label>
+                <select class="form-control shadow" formControlName="tipo">
+                    <option value="Tarjeta de crédito">Tarjeta de crédito</option>
+                    <option value="Tarjeta de débito">Tarjeta de débito</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Número de tarjeta</label>
+                <input type="number" class="form-control" formControlName="codigotarjeta" placeholder="Ingrese el número de la tarjeta" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Código de la tarjeta</label>
+                <input type="password" class="form-control" formControlName="codigoseguridad" placeholder="Ingrese el código de seguridad" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Fecha expiración</label>
+                <input type="number" class="form-control" formControlName="fecha" placeholder="Ingrese fecha de expiración" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<footer class="footer-contenedor">
+    <p class="mb-1">© 2021 Productos Inteligentes</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="">Instagram</a></li>
+        <li class="list-inline-item"><a href="">Facebook</a></li>
+        <li class="list-inline-item"><a href="">Twitter</a></li>
+    </ul>
+</footer>

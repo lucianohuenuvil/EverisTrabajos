@@ -13,6 +13,21 @@ import { TotalService } from '../total.service';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
+
+  constructor(private _servicio:TotalService){
+
+  }
+
+
+  ngOnInit(){
+  }
+
+
+
+
+
+
+
   totalDinero = 0;
   totalCarrito = 0;
   hola = ['hola','como'];
@@ -157,15 +172,12 @@ export class ProductosComponent implements OnInit {
   ];
   productosCarritoActual: any;
 
-  constructor(){
 
-  }
-  ngOnInit(){
-  }
+
 
   agregarProducto(i: any){
     if(this.productosCarrito.includes(this.productosActual[i])){
-      console.log("Ya tiene el producto")
+      //console.log("Ya tiene el producto")
       for(let j = 0;j<this.productosCantidad.length;j++){
         if(this.productosActual[i].codigo == this.productosCantidad[j].codigo){
           this.productosCantidad[j].cant+=1;
@@ -175,7 +187,7 @@ export class ProductosComponent implements OnInit {
       localStorage.setItem("total",JSON.stringify(this.totalDinero));
     }
     else{
-      console.log("No tiene el producto");
+      //console.log("No tiene el producto");
       this.productosCarrito.push(this.productosActual[i]);
       this.productosCantidad.push({codigo: this.productosActual[i].codigo, cant: 1});
       this.totalDinero+=this.productosActual[i].precio;
@@ -237,6 +249,19 @@ export class ProductosComponent implements OnInit {
         descripcion: this.productosActual1[i].descripcion, img: this.productosActual1[i].img, tags: this.productosActual1[i].tags});
     }
     this.productosActual = this.productosActual1;
+  }
+
+
+
+  cofirmarCarrito(){
+    this._servicio.setArray(this.productosCarrito)
+    
+    //this._service.setArray(datos);
+    //for(var i=0; i<this.productosCarrito.length; i++){
+    //  this._servicio.productosCarrito.push(this.productosCarrito[i]);
+   // }
+
+   // this._servicio.productosCarrito = this.productosCarrito
   }
 
 }

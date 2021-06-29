@@ -5,39 +5,57 @@ import { Injectable } from '@angular/core';
 })
 export class TotalService {
 
-  devolver() {
-    return [
-      {
-        codigo: 1,
-        nombreProducto:"Tallarines",
-        precio: 1200,
-        stock: 100
-      },
-      {
-        codigo: 2,
-        nombreProducto:"Pan",
-        precio: 1400,
-        stock: 200
-      },
-      {
-        codigo: 3,
-        nombreProducto:"Carne",
-        precio: 7000,
-        stock: 50
-      },
-      {
-        codigo: 4,
-        nombreProducto:"Vino",
-        precio: 7000,
-        stock: 120
-      },
-      {
-        codigo: 5,
-        nombreProducto:"Arroz",
-        precio: 1000,
-        stock: 200
-      }
-    ];
+
+  productosCarrito: any[] = []; // Array para el carrito
+  datosDireccion: any[] = []; // Array para el direccion
+  datosTarjeta: any[] = []; // Array para el usuario
+  datosUsuario: any[] = []; // Array para el usuario
+
+
+  constructor (){
+    //for(var i=0; i<this.productosCarrito.length; i++)
+     
+  }
+
+
+  setArray(array: any) {
+    this.productosCarrito = array;
+  }
+
+  setArrayDireccion(array: any) {
+    this.productosCarrito = array;
+  }
+
+
+  setArrayTarjeta(array: any) {
+    this.datosTarjeta = array;
+  }
+
+
+  setArrayUsuario(array: any){
+    this.datosUsuario = array;
+  }
+
+
+  getArrayTarjeta() {
+    return this.datosTarjeta;
+  }
+
+  
+  getArray() {
+    return this.productosCarrito;
+  }
+
+  getArrayDireccion() {
+    return this.productosCarrito;
+  }
+
+  getArrayUsuario() {
+    return this.productosCarrito;
+  }
+
+  imprimir(){
+    console.log(this.productosCarrito)
   }
 }
 
