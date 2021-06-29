@@ -33,7 +33,6 @@ export class OrdenComponent implements OnInit {
 
 
   FinalizarCompra(){
-    if(this.productosCarrito.len)
       this.router.navigate(['/factura'])
 
   }
