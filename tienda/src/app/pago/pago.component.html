@@ -11,7 +11,7 @@
 
 
 <div class="container">
-      <form [formGroup] ="formularioContacto" (ngSubmit)="enviar()" class="products-content">
+      <form [formGroup] ="formularioContacto" (ngSubmit)="enviar()" class="products-content"  #quizForm='ngForm' autocomplete="off">
             <div class="form-group">
                 <h1 style="text-align: center;">Datos de envío:</h1>
             </div>
@@ -53,7 +53,7 @@
             <label for="exampleInputPassword1">Codigo Postal</label>
             <input type="number" class="form-control" formControlName="codigoPostal" placeholder="Codigo postal" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled] = '!quizForm.form.valid'>Submit</button>
         </form>
 </div>
 
@@ -61,7 +61,7 @@
 
 <div class="contenedor-tarjeta">
     <div class="container">
-        <form [formGroup] ="formularioPago" (ngSubmit)="enviarPago()" class="products-content">
+        <form [formGroup] ="formularioPago" (ngSubmit)="enviarPago()" class="products-content"  #quizForm='ngForm' autocomplete="off">
             <div class="form-group">
                 <h1 style="text-align: center;">Datos de tarjeta:</h1>
             </div>
@@ -88,7 +88,7 @@
                 <label for="exampleInputPassword1">Fecha expiración</label>
                 <input type="number" class="form-control" formControlName="fecha" placeholder="Ingrese fecha de expiración" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button [disabled] = '!quizForm.form.valid' type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>

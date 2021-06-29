@@ -17,7 +17,7 @@ export class FacturaComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    
     
     this.productosCarrito = this._servicio.getArray()
     this.arraydireccion = this._servicio.getArrayDireccion()
